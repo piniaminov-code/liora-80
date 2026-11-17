@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ליאורה, הכי טובה בעולם</title>
+<meta name="description" content="שרים לליאורה, מילה אחר מילה - חוגגים 80, שרים מהלב">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♪</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="balloons" aria-hidden="true">
+  <svg viewBox="0 0 24 24"><path d="M9 3v10.55A4 4 0 1 0 11 17V7h6V3H9z" fill="currentColor"/><path d="M9 3h8v2H9z" fill="currentColor"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M12 2c1.5 2.2 1.5 4.8 0 7-1.5-2.2-1.5-4.8 0-7zM12 22c-1.5-2.2-1.5-4.8 0-7 1.5 2.2 1.5 4.8 0 7zM2 12c2.2-1.5 4.8-1.5 7 0-2.2 1.5-4.8 1.5-7 0zM22 12c-2.2 1.5-4.8 1.5-7 0 2.2-1.5 4.8-1.5 7 0z" fill="currentColor"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M6 3v11.1A3.5 3.5 0 1 0 8.5 17V8h9v6.1A3.5 3.5 0 1 0 20 17V3H6z" fill="currentColor"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M12 2c1.5 2.2 1.5 4.8 0 7-1.5-2.2-1.5-4.8 0-7zM12 22c-1.5-2.2-1.5-4.8 0-7 1.5 2.2 1.5 4.8 0 7zM2 12c2.2-1.5 4.8-1.5 7 0-2.2 1.5-4.8 1.5-7 0zM22 12c-2.2 1.5-4.8 1.5-7 0 2.2-1.5 4.8-1.5 7 0z" fill="currentColor"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M9 3v10.55A4 4 0 1 0 11 17V7h6V3H9z" fill="currentColor"/><path d="M9 3h8v2H9z" fill="currentColor"/></svg>
+</div>
+  <p class="badge">חוגגים 80</p>
+  <h1>ליאורה, הכי טובה בעולם</h1>
+  <p class="subtitle">שרים לליאורה, מילה אחר מילה</p>
+</header>
+
+<main>
+
+  <figure class="stage">
+    <div class="frame">
+      <video id="song" poster="garden.png" controls playsInline preload="metadata" aria-label="שיר יום ההולדת עם הנפשה בלולאה">
+        <source src="birthday.mp4" type="video/mp4">
+      </video>
+      <p id="videonote" class="videonote" role="status">מכינים את השיר והסרטון…</p>
+    </div>
+  </figure>
+
+  <section class="karaoke" aria-label="השורה המושרת כעת">
+    <p id="karaoke-section" class="karaoke-section">המילים יופיעו כאן בזמן השירה</p>
+    <p id="karaoke-line" class="karaoke-line">♪</p>
+    <p class="hint">המילה המודגשת עוקבת אחר השירה. אפשר לעצור או לקפוץ לכל מקום בשיר.</p>
+  </section>
+
+  <section class="lyrics" id="lyrics" aria-label="מילות השיר"></section>
+
+  <section class="listen">
+    <h2>להקשיב גם כהקראה</h2>
+    <p class="hint">אפשר להאזין למילים בקול, בלי המנגינה.</p>
+    <audio id="spoken" controls preload="metadata" src="narration.mp3" aria-label="הקראת הברכה לליאורה"></audio>
+  </section>
+
+</main>
+
+<footer>
+  <p>באהבה גדולה, משפחת אמינוב <svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21C7 16.5 3 13.3 3 9.5 3 7 5 5 7.5 5c1.8 0 3.4 1 4.5 2.6C13.1 6 14.7 5 16.5 5 19 5 21 7 21 9.5c0 3.8-4 7-9 11.5z" fill="#7a3b4f"/></svg></p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+                                                                                                                                                                                                                                                </html>
