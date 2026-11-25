@@ -1,0 +1,20 @@
+{
+  "name": "ליאורה, הכי טובה בעולם",
+  "short_name": "ליאורה 80",
+  "description": "שרים לליאורה, מילה אחר מילה - חוגגים 80, שרים מהלב",
+  "lang": "he",
+  "dir": "rtl",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["fullscreen", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#fdf6ea",
+  "theme_color": "#7a3b4f",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

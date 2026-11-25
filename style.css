@@ -467,3 +467,88 @@ html { scroll-padding-top: 66px; }
   .jump a { padding: 6px 11px; font-size: 14px; }
   .karaoke-line { font-size: 23px; }
 }
+
+/* ---- Safe areas (viewport-fit=cover) ---- */
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+.hero { position: relative; padding-top: calc(44px + env(safe-area-inset-top)); }
+.jump { top: env(safe-area-inset-top); }
+footer { padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
+
+/* ---- Fullscreen / add-to-home-screen controls ---- */
+.app-tools {
+  position: absolute;
+  top: calc(8px + env(safe-area-inset-top));
+  inset-inline-end: 8px;
+  display: flex;
+  gap: 4px;
+}
+.app-tools[hidden], .tool[hidden] { display: none; }
+.tool {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: 500 13px 'Heebo', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.tool svg { width: 18px; height: 18px; flex: 0 0 auto; }
+.tool:hover { background: #fffdf7cc; border-color: var(--gold-soft); color: var(--berry-deep); }
+@media (max-width: 420px) {
+  .tool { padding: 0; justify-content: center; }
+  .tool-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+
+.install-sheet {
+  width: min(420px, calc(100% - 24px));
+  margin: auto auto calc(12px + env(safe-area-inset-bottom));
+  padding: 22px 20px 18px;
+  border: 1px solid var(--gold-soft);
+  border-radius: 22px;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: 0 18px 50px rgba(38, 23, 27, 0.3);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.install-sheet::backdrop { background: rgba(38, 23, 27, 0.45); }
+.install-sheet[open] { animation: sheet-up 0.25s ease-out; }
+@keyframes sheet-up { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.install-sheet h2 {
+  font-family: 'Frank Ruhl Libre', serif;
+  color: var(--berry-deep);
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+.install-sheet ol, .install-sheet ul { margin: 0; padding-inline-start: 22px; }
+.install-sheet li { margin: 4px 0; }
+.install-sheet p { margin: 0 0 6px; }
+.install-sheet .sheet-note { margin-top: 10px; font-size: 14px; color: var(--muted); }
+.share-icon { width: 20px; height: 20px; vertical-align: -4px; color: #1a73e8; }
+.sheet-close {
+  position: absolute;
+  top: 8px;
+  inset-inline-end: 8px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 26px;
+  cursor: pointer;
+}
+.sheet-close:hover { background: #f3d9a855; }
+
+@media print {
+  .app-tools, .install-sheet, .jump, .bigplay, .skip { display: none !important; }
+}

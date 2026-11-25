@@ -2,10 +2,16 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ליאורה, הכי טובה בעולם</title>
 <meta name="description" content="שרים לליאורה, מילה אחר מילה - חוגגים 80, שרים מהלב">
 <meta name="theme-color" content="#fdf6ea">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ליאורה 80">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="ליאורה, הכי טובה בעולם">
@@ -14,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♪</text></svg>">
 <link rel="preload" as="image" href="garden.jpg">
 <link rel="stylesheet" href="style.css">
@@ -23,6 +30,16 @@
 <a class="skip" href="#song">דילוג לשיר</a>
 
 <header class="hero">
+  <div id="app-tools" class="app-tools" hidden>
+    <button id="fs-button" class="tool" type="button" aria-pressed="false" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="tool-label">מסך מלא</span>
+    </button>
+    <button id="install-button" class="tool" type="button" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v7M9 12l3 3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="tool-label">הוספה למסך הבית</span>
+    </button>
+  </div>
   <div class="balloons" aria-hidden="true">
   <svg viewBox="0 0 24 24"><path d="M9 3v10.55A4 4 0 1 0 11 17V7h6V3H9z" fill="currentColor"/><path d="M9 3h8v2H9z" fill="currentColor"/></svg>
   <svg viewBox="0 0 24 24"><path d="M12 2c1.5 2.2 1.5 4.8 0 7-1.5-2.2-1.5-4.8 0-7zM12 22c-1.5-2.2-1.5-4.8 0-7 1.5 2.2 1.5 4.8 0 7zM2 12c2.2-1.5 4.8-1.5 7 0-2.2 1.5-4.8 1.5-7 0zM22 12c-2.2 1.5-4.8 1.5-7 0 2.2-1.5 4.8-1.5 7 0z" fill="currentColor"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg>
@@ -102,8 +119,30 @@
   <p>רגעים של שמחה</p>
 </dialog>
 
+<dialog id="install-sheet" class="install-sheet" aria-labelledby="install-title">
+  <button class="sheet-close" type="button" aria-label="סגירה">×</button>
+  <h2 id="install-title">הוספה למסך הבית</h2>
+  <div id="install-ios" hidden>
+    <ol>
+      <li>לחצו על כפתור השיתוף <svg class="share-icon" viewBox="0 0 24 24" aria-label="שיתוף" role="img"><path d="M12 3v12M8 7l4-4 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10H5.5A1.5 1.5 0 0 0 4 11.5v8A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5v-8a1.5 1.5 0 0 0-1.5-1.5H17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> בסרגל של Safari.</li>
+      <li>גללו ובחרו <b>״הוספה למסך הבית״</b>.</li>
+      <li>לחצו <b>״הוספה״</b>.</li>
+    </ol>
+    <p class="sheet-note">באייפון ובאייפד זה עובד בדפדפן Safari.</p>
+  </div>
+  <div id="install-other" hidden>
+    <p>בדפדפן הזה אין כפתור התקנה אוטומטי.</p>
+    <ul>
+      <li>בכרום או באדג׳: פתחו את תפריט הדפדפן (⋮) ובחרו <b>״התקנה״</b> או <b>״הוספה למסך הבית״</b>.</li>
+      <li>ב-Safari במק: תפריט <b>״קובץ״</b> ← <b>״הוספה ל-Dock״</b>.</li>
+      <li>בפיירפוקס במחשב אין התקנה; אפשר לשמור את הדף כסימנייה.</li>
+    </ul>
+  </div>
+</dialog>
+
 <script src="data.js"></script>
 <script src="app.js"></script>
 <script src="photos.js"></script>
+<script src="pwa.js"></script>
 </body>
 </html>
