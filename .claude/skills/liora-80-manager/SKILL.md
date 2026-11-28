@@ -67,3 +67,8 @@ Always, in every project:
 - Any new access: accounts, API keys, permissions, network hosts, repositories.
 - Any private or personal data: collecting, storing, sharing or moving it.
 - Any action that is public, irreversible, or outside the boundaries above.
+
+## Project facts (read from this repo's own files; anything not listed here is unknown, do not assume it)
+
+- Static site: index.html, app.js, data.js, style.css plus birthday.mp4, narration.mp3 and garden.png. No package.json, so there is no build, lint or test command to run. Check changes by serving the folder (python3 -m http.server) and reading it in a browser at a phone width (390x844) before and after, and list exactly which files changed.
+- Do not re-encode, replace or regenerate the video, audio or image unless the brief names them. README.md is only a title.
